@@ -42,6 +42,20 @@ export const getExpenses = asyncHandler(async (req, res) => {
   res.json(expenses);
 });
 
+// @desc    Get single expense by ID
+// @route   GET /api/expenses/:id
+// @access  Private
+export const getExpense = asyncHandler(async (req, res) => {
+  const expense = await Expense.findById(req.params.id);
+
+  if (!expense || expense.user.toString() !== req.user._id.toString()) {
+    res.status(404);
+    throw new Error('Expense not found or unauthorized');
+  }
+
+  res.json(expense);
+});
+
 // @desc    Update an expense
 // @route   PUT /api/expenses/:id
 // @access  Private
