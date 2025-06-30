@@ -7,6 +7,7 @@ import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import AddExpense from './pages/AddExpense';
 import EditExpense from './pages/EditExpense';
+import Expenses from './pages/Expenses';
 import Profile from './pages/Profile';
 import ProtectedRoute from './components/ProtectedRoute';
 import './App.css';
@@ -51,6 +52,14 @@ function AppRoutes() {
         element={
           <ProtectedRoute>
             <EditExpense />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/expenses"
+        element={
+          <ProtectedRoute>
+            <Expenses />
           </ProtectedRoute>
         }
       />

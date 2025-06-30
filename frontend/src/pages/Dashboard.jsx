@@ -9,6 +9,7 @@ import Loader from '../components/Loader';
 import Toast from '../components/Toast';
 import { DollarSign, TrendingUp, Calendar, Plus, MessageCircle, ArrowRight, Sparkles } from 'lucide-react';
 import axios from 'axios';
+import WhatsAppIntegration from '../components/WhatsappIntegration';
 
 const Dashboard = () => {
   const { user } = useAuth();
@@ -265,36 +266,7 @@ const Dashboard = () => {
 
         {/* WhatsApp Integration Info */}
         <div>
-          <div className="bg-gradient-to-r from-indigo-50 to-blue-50 rounded-2xl border border-indigo-200 p-6 sm:p-8 shadow-lg">
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-indigo-500 to-blue-500 rounded-2xl flex items-center justify-center shadow-lg flex-shrink-0">
-                <MessageCircle className="w-8 h-8 text-white" />
-              </div>
-              <div className="flex-1">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3">
-                  Smart WhatsApp Integration
-                </h3>
-                <p className="text-gray-700 mb-4 text-sm sm:text-base">
-                  Add expenses instantly by sending WhatsApp messages in natural language:
-                </p>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
-                  <div className="bg-white rounded-xl p-4 border border-white shadow-sm">
-                    <code className="text-sm text-indigo-700 font-medium">
-                      "Spent ₹500 on groceries"
-                    </code>
-                  </div>
-                  <div className="bg-white rounded-xl p-4 border border-white shadow-sm">
-                    <code className="text-sm text-indigo-700 font-medium">
-                      "Paid ₹1200 for transport"
-                    </code>
-                  </div>
-                </div>
-                <p className="text-sm text-gray-600">
-                  Your expenses will be automatically categorized and synced to your dashboard!
-                </p>
-              </div>
-            </div>
-          </div>
+          <WhatsAppIntegration />
         </div>
       </div>
     </div>
