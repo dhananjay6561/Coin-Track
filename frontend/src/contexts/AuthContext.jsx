@@ -15,8 +15,8 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  // Set up axios defaults
-  axios.defaults.baseURL = 'http://localhost:5000/api';
+  const API_URL = import.meta.env.VITE_API_URL;
+  axios.defaults.baseURL = API_URL;
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -95,4 +95,4 @@ export const AuthProvider = ({ children }) => {
       {children}
     </AuthContext.Provider>
   );
-}; 
+};

@@ -4,18 +4,18 @@ import authRoutes from './routes/authRoutes.js';
 import { errorHandler } from './middlewares/errorMiddleware.js';
 import webhookRoutes from './routes/webhookRoutes.js';
 import expenseRoutes from './routes/expenseRoutes.js';
+import dotenv from 'dotenv';
 
 const app = express();
+dotenv.config();
 
-// CORS Configuration
-const corsOptions = {
-  origin: process.env.CORS_ORIGIN,
-  credentials: true,
-  optionsSuccessStatus: 200,
-};
 
-app.use(cors(corsOptions));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors({
+  origin: process.env.CLIENT_URL,
+  credentials: true
+}));
 
 
 app.use('/api/auth', authRoutes);
@@ -28,7 +28,7 @@ app.use('/api/webhook', webhookRoutes);
 app.use(errorHandler);
 
 app.post('/ping', (req, res) => {
-  console.log('🔥 PING received:', req.body);
+  console.log('PING received:', req.body);
   res.send('pong');
 });
 
