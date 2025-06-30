@@ -3,6 +3,7 @@ import cors from 'cors';
 import authRoutes from './routes/authRoutes.js';
 import { errorHandler } from './middlewares/errorMiddleware.js';
 import webhookRoutes from './routes/webhookRoutes.js';
+import expenseRoutes from './routes/expenseRoutes.js';
 
 const app = express();
 
@@ -23,6 +24,8 @@ app.post('/ping', (req, res) => {
   console.log('🔥 PING received:', req.body);
   res.send('pong');
 });
+
+app.use('/api/expenses', expenseRoutes);
 
 
 export default app;
