@@ -7,9 +7,16 @@ import expenseRoutes from './routes/expenseRoutes.js';
 
 const app = express();
 
-app.use(cors());
+// CORS Configuration
+const corsOptions = {
+  origin: process.env.CORS_ORIGIN,
+  credentials: true,
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 app.use('/api/auth', authRoutes);
 
