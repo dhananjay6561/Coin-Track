@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, DollarSign, TrendingUp, Shield, Smartphone, BarChart3, PieChart, Wallet } from 'lucide-react';
+import Coin from '../assets/coin.png'
 
 const FloatingIcon = ({ Icon, position, delay, color }) => (
   <div
@@ -132,11 +133,12 @@ const Landing = () => {
         <div className="w-full px-4 sm:px-6 lg:px-8 py-6">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-blue-600 rounded-xl flex items-center justify-center">
-                <Wallet className="text-white" size={20} />
-              </div>
+              
+  <img src={Coin} alt="Coin" className="w-5 h-5 object-contain" />
+
+
               <span className="text-2xl font-bold bg-gradient-to-r from-indigo-600 to-blue-600 bg-clip-text text-transparent">
-                ExpenseTracker
+                CoinTrack
               </span>
             </div>
             <div className="hidden md:flex items-center space-x-8">

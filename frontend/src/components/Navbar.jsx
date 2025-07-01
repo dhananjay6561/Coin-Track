@@ -51,7 +51,7 @@ const Navbar = () => {
                 </div>
                 <div className="hidden sm:block">
                   <span className="text-xl lg:text-2xl font-bold bg-gradient-to-r from-indigo-600 via-indigo-700 to-indigo-800 bg-clip-text text-transparent">
-                    FinanceTracker
+                    CoinTrack
                   </span>
                 </div>
               </Link>

@@ -82,7 +82,7 @@ const Register = () => {
             <UserPlus className="h-8 w-8 sm:h-10 sm:w-10 text-white drop-shadow-sm" />
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-2 sm:mb-3 tracking-tight px-4">
-            Join FinanceTracker
+            Join Coin Track
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-4">
             Create your account and start tracking expenses

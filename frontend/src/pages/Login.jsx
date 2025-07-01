@@ -71,7 +71,7 @@ const Login = () => {
             Welcome back
           </h2>
           <p className="text-base sm:text-lg text-gray-600 mb-4 sm:mb-6 px-4">
-            Sign in to your FinanceTracker account
+            Sign in to your CoinTrack account
           </p>
         </div>
 
