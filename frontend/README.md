@@ -99,6 +99,11 @@ frontend/
 
 ---
 
+## 🧩 Related
+- **Backend:** [Coin-Track Backend](https://github.com/dhananjay6561/Coin-Track/tree/master/backend)
+
+---
+
 ## 🔗 Backend API
 
 This frontend connects to the [Coin-Track backend](https://github.com/dhananjay6561/Coin-Track) for all data and authentication. See backend README for full API specs.

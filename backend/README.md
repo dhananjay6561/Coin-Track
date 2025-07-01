@@ -71,59 +71,38 @@ See `.env.example` for all required variables:
 
 ---
 
-## 📚 API Documentation
+## 📚 API Reference
+All endpoints are prefixed with `/api/`.
 
-### Authentication
-
-#### `POST /api/auth/register`
-Register a new user.
-- **Body:** `{ name, email, password, whatsappNumber }`
-- **Response:** User object + JWT token
-
-#### `POST /api/auth/login`
-Login with email and password.
-- **Body:** `{ email, password }`
-- **Response:** User object + JWT token
-
-#### `GET /api/auth/me`
-Get current user's profile (requires JWT).
-- **Headers:** `Authorization: Bearer <token>`
-- **Response:** User profile
+### 1. **Authentication** (`/api/auth`)
+| Method | Endpoint      | Description                | Access |
+|--------|---------------|----------------------------|--------|
+| POST   | /register     | Register a new user        | Public |
+| POST   | /login        | Login and receive JWT      | Public |
+| GET    | /me           | Get current user profile   | Private|
 
 ---
 
-### Expenses (All routes require authentication)
-
-#### `GET /api/expenses`
-Get all expenses for the authenticated user.
-- **Query (optional):** `startDate`, `endDate`
-- **Response:** Array of expenses
-
-#### `GET /api/expenses/:id`
-Get a single expense by ID.
-
-#### `POST /api/expenses`
-Create a new expense.
-- **Body:** `{ amount, category, description, date? }`
-
-#### `PUT /api/expenses/:id`
-Update an expense.
-- **Body:** `{ amount?, category?, description?, date? }`
-
-#### `DELETE /api/expenses/:id`
-Delete an expense by ID.
+### 2. **Expenses** (`/api/expenses`)
+| Method | Endpoint      | Description                        | Access   |
+|--------|--------------|------------------------------------|----------|
+| GET    | /            | Get all expenses for user           | Private  |
+| GET    | /:id         | Get a single expense by ID          | Private  |
+| POST   | /            | Create a new expense                | Private  |
+| PUT    | /:id         | Update an expense                   | Private  |
+| DELETE | /:id         | Delete an expense                   | Private  |
 
 ---
 
-### Webhook (WhatsApp Integration)
+### 3. **Webhook (WhatsApp Integration)** (`/api/webhook`)
+| Method | Endpoint | Description                                 | Access   |
+|--------|----------|---------------------------------------------|----------|
+| POST   | /        | Receive WhatsApp message via Twilio webhook | Public   |
 
-#### `POST /api/webhook`
-Receives WhatsApp messages via Twilio webhook.
-- **Body:** `{ From, Body }`
-- **Logic:**
-  - Parses messages like `Spent 100 on food`.
-  - Logs the expense for the user with the matching WhatsApp number.
-  - Responds with a confirmation or error message.
+---
+
+## 🧩 Related
+- **Frontend:** [Coin-Track Frontend](https://github.com/dhananjay6561/Coin-Track/tree/master/frontend)
 
 ---
 
