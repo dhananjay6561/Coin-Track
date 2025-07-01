@@ -86,7 +86,18 @@ All endpoints are prefixed with `/api/`.
 ### 2. **Expenses** (`/api/expenses`)
 | Method | Endpoint      | Description                        | Access   |
 |--------|--------------|------------------------------------|----------|
-| GET    | /            | Get all expenses for user           | Private  |
+| GET    | /            | Get all expenses for user           | Pr{
+  "id": "project1",
+  "title": "Coin-Track: Finance Tracker",
+  "description": "A full-stack expense tracking platform with WhatsApp integration, beautiful dashboards, and real-time analytics. Users can log expenses via web or WhatsApp, visualize spending, and manage their finances effortlessly.",
+  "problemSolved": "People struggle to consistently track expenses and gain insights into their spending habits. Coin-Track makes it easy to log expenses from anywhere (even WhatsApp), visualize trends, and stay on top of personal finances.",
+  "stack": ["React", "Vite", "Tailwind CSS", "Node.js", "Express", "MongoDB", "JWT", "Twilio API"],
+  "impact": "Empowered 1000+ users to track expenses seamlessly, with WhatsApp logging and instant analytics. Achieved 99.9% uptime and sub-second dashboard loads.",
+  "image": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1000",
+  "github": "https://github.com/dhananjay6561/Coin-Track",
+  "live": "https://coin-track-nine.vercel.app/landing",
+  "tags": ["Fullstack", "Finance", "Productivity", "WhatsApp Integration"]
+}ivate  |
 | GET    | /:id         | Get a single expense by ID          | Private  |
 | POST   | /            | Create a new expense                | Private  |
 | PUT    | /:id         | Update an expense                   | Private  |
